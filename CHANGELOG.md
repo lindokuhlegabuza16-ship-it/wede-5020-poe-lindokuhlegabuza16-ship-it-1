@@ -6,13 +6,22 @@ This project follows Semantic Versioning.
 
 ## [1.0.0] 
 ### Added
-- xyz
+-about paige
+-contact paige
+-inquiry paige
+-refrencing
 
 ### Changed
-- xyz
+-Site map
+-site map structure
+-skeleton of index.html paige
+-dog picture and added own picture
 
 ### Fixed
-- xyz
+-product paige code
+-readme.md
+-contact form
+-footer code
 
 ## Semantic Versioning
 

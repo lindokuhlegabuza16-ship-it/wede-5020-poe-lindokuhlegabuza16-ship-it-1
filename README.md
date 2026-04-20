@@ -31,8 +31,15 @@ WEEK 3-5:Search engine optimization and forming functionality and validation
 
 ## Sitemap
 
-![Website Sitemap](img/my%20sitemap.png ) <br> 
+(img/my%20sitemap.png ) <br> 
 
 ## References
 
-Ensure that all sources used in your assignment are cited and referenced using the Harvard referencing style.
+American-gonzalez(2024).Leather jacket picture[online]<br>
+Available at:https://i.mdel.net/mdx/i/2024/01/America-Gonzalez-01-21-2024-PFWM-FW24-StreetStyle5-MelodieJeng-MJJ_1455-1267x1900.jpg<br>
+Brand forge(2025).Website design prices South Africa 2025[online]<br>
+Available at:www.thebrandforge.co.za <br>
+GreatStack(2022).How to add google map on Webasite using HTML And CSS[online]<br>
+Available at:https://youtu.be/4U_AAGHzTok?si=u9_iPGuDlsZybT0s <br>
+UnSplash.all the website pictures[online]<br>
+Available at:https://unsplash.com/
