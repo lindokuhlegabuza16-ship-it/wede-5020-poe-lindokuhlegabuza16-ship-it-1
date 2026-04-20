@@ -42,4 +42,8 @@ Available at:www.thebrandforge.co.za <br>
 GreatStack(2022).How to add google map on Webasite using HTML And CSS[online]<br>
 Available at:https://youtu.be/4U_AAGHzTok?si=u9_iPGuDlsZybT0s <br>
 UnSplash.all the website pictures[online]<br>
-Available at:https://unsplash.com/
+Available at:https://unsplash.com/ <br>
+draw.io.site map[online]
+available at:draw.io <br>
+Microsoft visio.used to draw sitemap structure[online]
+Available at:https://www.bing.com/search?filters=ufn%3a%22Microsoft+Visio%22+sid%3a%22cf79e9af-a9d9-c2d9-d1d3-5b9ed225e66e%22&asbe=HS&qs=MB&pq=mi&sk=CSYN1AS9LS3LC1HS1&sc=18-2&q=microsoft+visio&cvid=3e4c3c52bf254a6789e574efba48427c&gs_lcrp=EgRlZGdlKgYIARAuGEAyBwgAEAAY-QcyBggBEC4YQDIGCAIQRRg5MgYIAxBFGDwyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPDIGCAgQRRg80gEINDcwNGowajSoAgCwAgA&FORM=ANAB01&PC=ASTS
