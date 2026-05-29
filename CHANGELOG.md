@@ -10,6 +10,7 @@ This project follows Semantic Versioning.
 -contact paige
 -inquiry paige
 -refrencing
+-comments
 
 ### Changed
 -Site map
