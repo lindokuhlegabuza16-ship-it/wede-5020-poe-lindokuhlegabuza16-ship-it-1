@@ -24,6 +24,12 @@
     --max-width: 1200px;
     --nav-height: 72px;
 }
+header .icons a {
+    color: var(--text-color);
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    transition: color var(--transition);
+}
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -74,28 +80,35 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     color: var(--text-color);
     letter-spacing: 0.04em;
-    line-height: 1.2;
+    line-height: 1.05;
     text-transform: uppercase;
 }
-
-nav a:hover {
-    text-decoration: underline;
+h1 {font-size: clamp(1.6rem, 4vw, 2.8rem); }
+h2 {font-size: clamp(1.3rem, 3vw, 2rem);}
+h3 {font-size: clamp(1.1rem, 2vw, 1.5rem);}
+h4 {font-size: clamp(0.95rem, 1.5vw, 1.2rem);}
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-color);
+    max-width: 70ch;
 }
-table {
+.container {
     width: 100%;
-    border-collapse: collapse;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
 }
-table, th, td {
-    border: 1px solid var(--text-color);
+.section {
+    padding-block: 5rem;
 }
-th, td {
-    padding: 10px;
-    text-align: left;
+.section--sm {
+    padding-block: 2.5rem;
 }
-img { 
-    display: block;
-    max-width: 100%;
-    height: auto;
+hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin-block: 0;
 }
 header {
     position:sticky;
@@ -114,7 +127,7 @@ header .container {
     width: 100%;
 }
 header img {
-    max-width: 150px;
+    max-width: 48px;
     height: auto;
     object-fit: contain;
 }
@@ -127,19 +140,333 @@ header nav table {
     border-collapse: collapse;
 }
 header nav table td {
-    border: none;
-    padding: 0 15px;
+    padding: 0;
 }
-header nav table td a {
-    font-family: Arial, sans-serif;
+header nav table td a,
+header nav a {
+    font-family: var(--font-heading);
     font-size: 1.1rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.01em;
     text-transform: uppercase;
-    color: var(--text-color);
-    text-decoration: none;
+    color: var(--text-color-muted);
+    padding: 0.4rem 0.9rem;
+    position: relative;
+    transition: color var(--transition);
+}
+header nav table td a::after,
+header nav a::after {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: -2px;
+    height: 1px;
+    background-color: var(--color-accent--hot);
+    transform: scaleX(0);
+    transition: transform var(--transition);
+}
+header nav table td a:hover::after,
+header nav a:hover::after {
+    transform: scaleX(1);
+}
+header nav table td a.active,
+header nav a.active {
+    color: var(--color-text);
+} 
+header nav table td a.active::after {
+    transform: scaleX(1);
+}
+
+.hero {
+    min-height: calc(100vh - var(--nav-height));
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding-block: 4rem;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-bg);
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    background: radial-gradient(ellipse at 50% 60%, rgba(240, 236, 228, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+}
+.hero_eyebrow {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
     font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-accent-hot);
+    margin-bottom: 1rem;
 }
-header nav table td a:hover {
-    text-decoration: underline;
+.hero_title {
+    margin-bottom: 1rem;
 }
- 
+.hero_subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-color-muted);
+    margin-bottom: 2.5rem;
+    max-width: 50ch;
+    margin-inline: auto;
+}
+
+.btn,
+a.buy-button,
+a.see-button {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.2rem;
+    border: 1px solid var(--color-btn-bg);
+    cursor: pointer;
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+    border-radius: var(--radius-medium);
+    white-space: nowrap;
+}
+.btn-primary,
+a.buy-button {
+    background-color: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    border-color: var(--color-btn-bg);
+    margin-top: 0.75rem;
+}
+.btn--primary:hover,
+a.buy-button:hover {
+    background-color: transparent;
+    color: var(--color-text);
+    opacity: 1;
+    transform: translateY(-2px);
+}
+.btn--outline,
+a.see-button {
+    background-color: transparent;
+    color: var(--color-btn-bg);
+    border-color: var(--color-border);
+    margin-top: 1.5rem;
+}
+.btn--outline:hover,
+a.see-button:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.section-label::before,
+.section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-border);
+}
+.section-label span {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-accent-muted);
+    white-space: nowrap;
+}
+body > img,
+section > img,
+div > img {
+    border-radius: var(--radius-medium);
+    object-fit: cover;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+body > img:hover,
+section > img:hover {
+    transform: scale(1.015);
+    box-shadow: var(--shadow-hover);
+}
+.product-grind {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+.product-card_img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+.product-card_body {
+    padding: 1rem 1.25rem 1.5rem;
+}
+.product-card_name {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+.product-card_price {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-accent-hot);
+}
+
+body > h1,
+body >h2 {
+    padding-inline: 1.25rem;
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
+}
+body > p {
+    padding-inline: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+body > br {
+    display: none;
+}
+body > img,
+body > section img,
+body > div img {
+    max-width: 500px;
+    width:100%;
+    height:auto;
+    margin-inline: 1.25rem;
+    margin-top: 1.25rem;
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-card);
+}
+body > a.buy-button,
+body > div > a.buy-button,
+section + div > a.buy-button {
+    margin-inline: 1.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+}
+body > div > a.see-button {
+    margin-inline: 1.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+footer {
+    background-color: var(--color-bg-alt);
+    border-top: 1px solid var(--color-border);
+    padding-block: 2rem;
+    margin-top: 4rem;
+}
+footer table {
+    border: none !important;
+    width: 100%;
+}
+footer table td {
+    border: none !important;
+    text-align: center;
+}
+footer p {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    letter-spacing: 0.1em;
+    text-align: center;
+    max-width: none;
+    padding-inline: 0;
+}
+
+input,
+textarea,
+select {
+    background-color: var(--color-surface);
+    color: var(--text-color);
+    border: 1px solid var(--color-border);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-small);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    width: 100%;
+    transition: border-color var(--transition);
+    outline: none;
+}
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-accent-hot);
+}
+label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.4rem;
+}
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}
+
+::selection {
+    background-color: var(--color-accent-hot);
+    color: var(--color-bg);
+}
+
+.text-muted {color: var(--text-color-muted); }
+.text-accent {color: var(--color-accent-hot); }
+.text-center {text-align: center; }
+.mt-1 {margin-top: 1rem; }
+.mt-2 { margin-bottom: 1rem; }
+.mt-3 {margin-top: 1.5rem; }
+.mt-4 {margin-top: 2rem; }
+.mb-1 {margin-bottom: 0.5rem; }
+.mb-2 {margin-bottom: 1rem; }
+.mb-3 {margin-bottom: 1.5rem; }
+.mb-4 {margin-bottom: 2rem; }
+.flex   {display: flex; }
+.flex-center {display: flex; align-items: center; justify-content: center; }
+.gap-1 {gap: 0.5rem; }
+.gap-2 {gap: 1rem; }
+.gap-3 {gap: 1.5rem; }
+
+@media (min-width: 1024px) {
+    :root {
+        --nav-height: 80px;
+    }
+}
+body > img,
+body > section img {
+    max-width: 500px;
+}
+   .product-grid {
+        grid-template-columns: repeat(3px, 1fr);
+    }
