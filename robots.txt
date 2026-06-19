@@ -1,0 +1,73 @@
+# Allow all search engines to crawl
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /logs/
+
+# Disallow duplicate content or non-essential pages
+Disallow: /inquiry.html?*
+Disallow: /product.html?*
+Disallow: /search?
+Disallow: /checkout/
+Disallow: /cart/
+
+# Prevent crawling of dynamic parameters
+Disallow: /*.pdf$
+Disallow: /*.zip$
+
+# Disallow image folders from being crawled separately
+Disallow: /img/
+Disallow: /images/
+Disallow: /assets/images/
+
+# Allow CSS and JS for rendering (important for modern SEO)
+Allow: /styles.css$
+Allow: /script.js
+
+# Googlebot - faster crawling
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Bingbot - respect crawl rate
+User-agent: Bingbot
+Crawl-delay: 2
+
+# Slower crawlers - be gentle
+User-agent: Yandex
+Crawl-delay: 5
+
+User-agent: Yahoo! Slurp
+Crawl-delay: 5
+
+# Block email harvesters and spambots
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+# Block AI crawlers 
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
